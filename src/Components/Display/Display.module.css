@@ -1,0 +1,35 @@
+.container {
+    height: 55vh;
+    width: 100vw;
+    margin: 0 auto;
+    overflow: auto;
+    flex: auto;
+}
+.innerContainer {
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.expenses {
+    width: 40vw;
+} 
+
+
+.income {
+    width: 40vw;
+ }
+ 
+ .font {
+     font-size: 2rem;
+     padding-bottom: .5em;
+     font-family: 'Baloo 2', cursive;
+ }
+
+ .incColor {
+    color: rgb(33, 180, 146);
+ }
+
+ .expColor {
+    color: rgb(187, 6, 6)
+ }

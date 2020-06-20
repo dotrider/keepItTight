@@ -1,0 +1,50 @@
+.container {
+    height: 35vh;
+    width: 100vw;
+    background-color: rgb(99, 199, 199);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.results {
+    background-color: rgb(192, 249, 251);
+    width: 20em;
+    height: 3em;
+    border-radius: .2em;
+    margin: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.income {
+    background-color: rgb(33, 180, 146);
+}
+
+.expenses {
+    background-color: rgb(187, 6, 6);
+}
+
+.results > p {
+    padding: 0 1.5em 0 1em;
+    font-size: 1.5rem;
+    font-family: 'Baloo 2', cursive;
+}
+
+.amountFont {
+    font-size: 2rem;
+    padding: .5em;   
+}
+.primaryFont {
+    font-size: 1.5rem;
+    font-family: 'Baloo 2', cursive;
+    color: #ffffff;
+}
+
+.fontColor {
+    color: #ffffff
+}

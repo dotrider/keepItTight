@@ -1,24 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import './reset.css'
+import './App.css'
+import Style from './App.module.css';
+import { Header, Display, Inputs } from './Components'
+import axios from 'axios';
 
-function App() {
+
+
+const App = () => {
+
+const [ data, setData ] = useState([])
+
+
+console.log(data)
+
+useEffect(() => {
+  const getData = async () => { 
+  const res = await axios.get('/api/income')
+  setData(res.data)
+  }
+  getData()
+},[])
+
+const incomeMoney = async (description, money, category) => {
+  console.log(description, money, category)
+  const res = await axios.post('/api/income/', {description, money, category}); 
+  setData(res.data)
+}
+
+const deleteExpense = async (id) => {
+  const res = await axios.delete(`/api/income/${id}`)
+  setData(res.data)
+}
+
+const income = data.filter(m => m.category === 'income')
+const expense = data.filter(m => m.category === 'expense')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={Style.container}>
+      <Header data={data}/>
+      <Inputs incomeMoney={incomeMoney} />
+      <Display deleteExpense={deleteExpense} income={income} expense={expense}/>
     </div>
   );
 }
